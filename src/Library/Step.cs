@@ -23,5 +23,17 @@ namespace Full_GRASP_And_SOLID.Library
         public int Time { get; set; }
 
         public Equipment Equipment { get; set; }
+
+
+        public double CostoPorPaso(){
+
+            double insumo;
+            double equipo;
+
+            insumo = this.Quantity * this.Input.UnitCost;
+            equipo = (this.Time/60) * this.Equipment.HourlyCost;
+            double total = insumo + equipo;
+            return total;
+        }
     }
 }
